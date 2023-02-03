@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        p {
+            text-align: center;
+            /* border: 1px dashed black; */
+            margin-right: 125px;
+            margin-left: 125px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+            color:limegreen;
+        }
+
+        .buttondiv {
+        text-align: center;
+         }
+
+     .btn {
+
+        background-color: limegreen;
+        color: white;
+        border-radius: 20px;
+        border: none;
+        padding: 10px 10px;
+        margin: 10px;
+        font-size: 15px;
+        text-align: center;
+        display: inline-block;
+        cursor: pointer;
+        border: 1px solid grey;
+        
+    }
+
+    </style>
+
+    <script>
+
+        //Mark Luber 2/2/23
+
+        check();
+        //calls the function to check the users input
+       
+        function docalculation(num) {
+        //pass in user input to this function
+
+        num = parseInt(num);
+        //converts the users string input to an integer
+
+        var numplusnine = num + 9;
+        var mutwo = numplusnine * 2;
+        var subfour = mutwo - 4;
+        var dividetwo = subfour/2;
+        var luckysev = dividetwo - num;
+        //do the calculations and set different variables to display a custom output depending on what number is entered
+
+        alert("9 +" + num + " =" + numplusnine + " * 2 =" + mutwo + "- 4 =" + subfour + " divided by 2 =" + dividetwo + " subtracted by" + num + " =" +luckysev);        
+        //display an alert to show what calculations were just performed
+
+        document.write("<h1>Lucky 7 App</h1>");
+        document.write("<h3>" + "Your number: " + num + "</h3>");
+        document.write("<p>" + num + " plus 9 " + " = " + numplusnine + "<br>"
+             + numplusnine + " multiplied by 2 = " + mutwo + "<br>" 
+             + mutwo + " subtracted by 4 = " + subfour + "<br>" 
+             + subfour + " divided by 2 = " + dividetwo + "<br>"
+              + dividetwo + " subtracted by " + num + " = " +luckysev + "</p>");
+        //display the results on the website - formatted as text
+
+        }
+
+        function check() {
+
+        var num = prompt("Enter any whole number");
+        //displays the initial promp
+
+                
+        if (num % 1 == 0 && !isNaN(parseInt(num))) {
+        //check if the user-entered number is whole (first condition checks if number has a decimal place) - second condition checks if it is a number / is not NaN
+        
+        docalculation(num);
+        //performs the calculation, and passes the user-entered value to the docalculation function
+    
+        } else {
+
+        alert("Error, please enter a valid, whole number");
+        //displays an error alert if the user input is not a whole number or is not a number/empty
+        check();
+        //calls the check function again to repeat the inital prompt
+        }
+
+        }
+
+        
+    </script>
+
+</head>
+<body>
+
+    <div class="buttondiv">
+        
+        <button class="btn" onclick="location.reload();">Reset</button>
+        <!-- reset button to reload the webpage -->
+
+    </div>
+
+    
+</body>
+</html>
